@@ -39,7 +39,7 @@ class AuthController extends Controller
             $token = JWTAuth::attempt($credentials);
 
             $response->message = "Inicio de sesión exitoso";
-            $response->data = (object) ["name" => $user->name, "lastname"=>$user->lastname,"email"=>$user->email,"phone"=>$user->phone];
+            $response->data = (object) ["id" => $user->id,"name" => $user->name, "lastname"=>$user->lastname,"email"=>$user->email,"phone"=>$user->phone];
             $response->status = true;
             $response->token = $token;
 
